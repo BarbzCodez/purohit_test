@@ -1,6 +1,6 @@
 import React from "react";
 
-import { VStack, Heading, Text, Button, Center, AbsoluteCenter } from "@chakra-ui/react";
+import { VStack, Heading, Text, Center, AbsoluteCenter } from "@chakra-ui/react";
 
 function App() {
   return (
