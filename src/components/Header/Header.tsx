@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Flex, Image, Spacer, HStack } from "@chakra-ui/react";
+import { Button, Flex, Image, Spacer, HStack, VStack, Heading, Text, Center, AbsoluteCenter } from "@chakra-ui/react";
 
 import { useNavigate } from "react-router-dom";
 
