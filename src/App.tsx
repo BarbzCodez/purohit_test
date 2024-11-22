@@ -1,18 +1,22 @@
 import React from "react";
 
-import { VStack, Heading, Text, Center, AbsoluteCenter } from "@chakra-ui/react";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
-function App() {
+import Header from "./components/Header";
+
+import Home from "./pages/Home/Home";
+import ContactUs from "./pages/ContactUs/ContactUs";
+
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <VStack>
-        <Center>
-          <Heading>Purohit Nurse Practitioner Clinic</Heading>
-        </Center>
-        <AbsoluteCenter>
-          <Text fontSize="xl">Phone: 2043901861 Fax: 204...</Text>
-        </AbsoluteCenter>
-      </VStack>
+    <div className="PurohitPage">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/purohit_test" element={<Home />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
