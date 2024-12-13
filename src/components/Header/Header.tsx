@@ -1,28 +1,37 @@
 import React from "react";
 
-import { Button, Flex, Image, Spacer, HStack} from "@chakra-ui/react";
+import { Button, Flex, Image, Spacer, HStack } from "@chakra-ui/react";
 
 import { useNavigate } from "react-router-dom";
 
 import purohitLogo from "../../images/purohit_logo_full.png";
 
+interface NavItem {
+  name: string;
+  path: string;
+}
+const navItems: NavItem[] = [
+  { name: "Home", path: "/" },
+  { name: "Holter Monitors", path: "/holterMonitors" },
+  { name: "Facials", path: "/facials" },
+  { name: "Contact Us", path: "/contactUs" },
+
+];
+
 const Header = (): JSX.Element => {
   const navigate = useNavigate();
-  const handleClickHome = () => {
-    navigate("/");
-  };
 
-  const handleClickContactUs = () => {
-    navigate("/ContactUs");
-  };
   return (
     <div>
-      <Flex m="1rem">
+      <Flex m="2rem" mx="4rem">
         <Image width="15rem" src={purohitLogo} alt="Purohit Logo" />
         <Spacer />
         <HStack>
-          <Button onClick={handleClickHome}> Home </Button>
-          <Button onClick={handleClickContactUs}> Contact Us </Button>
+          {navItems.map((item) => (
+            <Button key={item.name} onClick={() => navigate(item.path)} variant="ghost" size="lg">
+              {item.name}
+            </Button>
+          ))}
         </HStack>
       </Flex>
     </div>
